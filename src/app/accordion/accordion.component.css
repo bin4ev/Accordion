@@ -19,7 +19,7 @@ color: white;
 border: none;
 }
 .title:hover:not(.active){
-    background-color:green;
+    background-color: #EDEDED;
 }
 .section-content{
     height: 280px;
