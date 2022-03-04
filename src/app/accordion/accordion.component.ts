@@ -11,6 +11,7 @@ export class AccordionComponent implements AfterContentInit {
   @ContentChildren(AccordionSectionComponent) queryList!: QueryList<AccordionSectionComponent>
 
   compChildren!: any
+  activeElId!: any
 
   constructor(private accService: AccordionService) {
     this.accService.$showRandomId.subscribe(id => this.hideContent(id))
@@ -18,14 +19,19 @@ export class AccordionComponent implements AfterContentInit {
 
   ngAfterContentInit(): void {
     this.compChildren = this.queryList.toArray()
+    for (let i = 0; i < this.compChildren.length; i++) {
+      this.compChildren[i].id = i
+    }
   }
 
   hideContent(id: any) {
-    for (let comp of this.compChildren) {  
-      if (comp.randomId != id) {
-        comp.showContent = false
-      }
+    if (this.activeElId != undefined) {
+      this.compChildren[this.activeElId].showContent = false
+      this.activeElId = id
+      return
     }
+
+    this.activeElId = id
   }
 
 }

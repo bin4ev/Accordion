@@ -1,0 +1,13 @@
+<section id="{{id}}" class="section" (click)="onClick()">
+  <div class="title" [ngClass]="{'active':showContent}">
+    <span style="margin-right: 5px;">
+      <fa-icon [icon]="showContent ? downIcon : rightIcon"></fa-icon>
+    </span>
+   {{title}}
+  </div>
+  <div class="section-content" *ngIf="showContent" @slideShowHide>
+    <p>
+      <ng-content></ng-content>
+    </p>
+  </div>
+</section>
