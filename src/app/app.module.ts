@@ -5,16 +5,20 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppComponent } from './app.component';
 import { AccordionComponent } from './accordion/accordion.component';
+import { AccordionSectionComponent } from './accordion-section/accordion-section.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    AccordionComponent
-  ],
+    AccordionComponent,
+    AccordionSectionComponent,
+    ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
