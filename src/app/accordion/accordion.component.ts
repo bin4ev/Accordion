@@ -25,13 +25,14 @@ export class AccordionComponent implements AfterContentInit {
   }
 
   hideContent(id: any) {
-    if (this.activeElId != undefined) {
-      this.compChildren[this.activeElId].showContent = false
+    if (this.activeElId == undefined) {
       this.activeElId = id
       return
     }
 
+    this.compChildren[this.activeElId].showContent = false
     this.activeElId = id
+   
   }
 
 }
