@@ -32,8 +32,6 @@ export class AccordionComponent implements AfterContentInit {
 
     this.compChildren[this.activeElId].showContent = false
     this.activeElId = id
-   
   }
-
 }
 
